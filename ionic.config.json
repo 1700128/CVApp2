@@ -1,0 +1,8 @@
+{
+  "name": "CVApp2",
+  "app_id": "916f97e5",
+  "type": "ionic-angular",
+  "integrations": {
+    "cordova": {}
+  }
+}
