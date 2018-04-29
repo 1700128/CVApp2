@@ -1,11 +1,30 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      About
-    </ion-title>
-  </ion-navbar>
-</ion-header>
+    <ion-navbar>
+      <img src="assets/imgs/images.jpeg" class="navbarLogo"/>
+      <ion-title>About</ion-title>
+    </ion-navbar>
+  </ion-header>
 
 <ion-content padding>
-
+  <img class="pic" src="assets/imgs/IMG_0522"/>
+<ion-row>
+  <ion-col col-9>
+    <ion-item>
+      <ion-input type="text" [(ngModel)]="newQuality" placeholder="New Quality"></ion-input>
+    </ion-item>
+  </ion-col>
+  <ion-col>
+    <button ion-button (click)="addQuality()">Add!</button>
+  </ion-col>
+</ion-row>
+<ion-list>
+  <ion-item-sliding *ngFor="let quality of listQualities | async">
+    <ion-item>
+      {{ quality.$value }}
+    </ion-item>
+    <ion-item-options side="right">
+      <button ion-button color="danger" icon-only (click)="removeQuality(quality.$key)"><ion-icon name="trash"></ion-icon></button>
+    </ion-item-options>
+  </ion-item-sliding>
+</ion-list>
 </ion-content>
