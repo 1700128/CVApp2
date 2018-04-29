@@ -18,9 +18,9 @@
   </ion-col>
 </ion-row>
 <ion-list>
-  <ion-item-sliding *ngFor="let quality of listQualities | async">
+  <ion-item-sliding *ngFor="let quality of (listQualities)">
     <ion-item>
-      {{ quality.$value }}
+      {{ quality.value | async }}
     </ion-item>
     <ion-item-options side="right">
       <button ion-button color="danger" icon-only (click)="removeQuality(quality.$key)"><ion-icon name="trash"></ion-icon></button>
